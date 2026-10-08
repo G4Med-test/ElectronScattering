@@ -1,6 +1,27 @@
-# Smoke test run on every push: one event, only generic Geant4 commands.
-# Add your application's commands as needed, keeping it fast.
+#
+# Macro file for "ElectronScattering" (one-event smoke test, run on every push)
+#
 /control/verbose 2
 /run/verbose 2
+
+#
+# define here the Scattering foil
+#
+/testem/det/setScatteringFoilMaterial Aluminum
+/testem/det/setThickness 0.05185 cm
+/testem/det/setExitWindowMaterial Titanium
+
+/testem/phys/addPhysics emstandard_opt0
 /run/initialize
+
+/run/setCut 0.05 mm
+
+/gun/particle e-
+/gun/energy 13 MeV
+
+/analysis/setFileName unit
+/analysis/h1/set 3 120 0. 240. mm
+/analysis/h1/set 4 120 0. 240. mm
+
+/run/printProgress 1
 /run/beamOn 1

@@ -1,3 +1,9 @@
 {
-  "macros": ["example.mac"]
+  "macros": [
+    "Aluminum_GoudsmitSaunderson.mac",
+    "Beryllium_GoudsmitSaunderson.mac",
+    "Titanium_GoudsmitSaunderson.mac",
+    "Gold_GoudsmitSaunderson.mac",
+    "Graphite_GoudsmitSaunderson.mac"
+  ]
 }
